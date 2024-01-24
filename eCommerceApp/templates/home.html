@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- <script src="{% static 'js/main.js' %}"></script> -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="../static/css/style.css"> -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <i>This is Home Page.</i>
+    <h1>This is Heading Tag from template</h1>
+    <!-- It is Variable Interpolation -->
+    <strong>My Name is {{name}} and I'm {{age}} years old.</strong>
+
+    <!-- DTL (Django Template Language) -->
+
+    <!-- decision control instruction -->
+    {% if x > y %}
+    <p>{{x}} is greater</p>
+    {% else %}
+    <p>{{y}} is greater</p>
+    {% endif %}
+
+    <b>{{res}}</b>
+
+    <!-- loop control instruction -->
+    {% for x in l %}
+    {{x}} <br>
+    {% endfor %}
+
+    <br>
+
+    {% for item in products %}
+    <!-- {{x}} <br> -->
+    <tr>
+        <td>{{item.id}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.cat}}</td>
+        <td>{{item.price}}</td> <hr>
+    </tr>
+    {% endfor %}
+
+    <table cellspacing="10">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for item in products %}
+            <!-- {{x}} <br> -->
+            <tr>
+                <!-- <td>{{x.id}}</td> -->
+                <td>{{forloop.counter}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.cat}}</td>
+                <td>{{item.price}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <button onclick="greet()">Click Me</button>
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>
