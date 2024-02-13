@@ -28,8 +28,7 @@ STATICFILES_DIRS = [<br>
 ]<br>
 iii] For media files & older:
 MEDIA_URL = 'media/'<br>
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')<br>
-<br><br>
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')<br><br>
 c] Inside the settings.py file make below changes: <br>
 DATABASES = {<br>
     'default': {<br>
