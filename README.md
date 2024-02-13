@@ -17,21 +17,19 @@
 6] In order to execute and run this project you need to **first install XAMPP software from https://www.apachefriends.org/download.html**
 <br><br>
 7] After it's completion of installation you need to connect the xampp database with your django-project inside the **settings.py** project file by making below corrections.<br>
-a] Execute the **import os** module command. <br>
+a] Execute the **import os** module command. <br><br>
 b] Also for the smooth execution oftemplates, static files and media folder use below statements: <br>
 i] For templates files & folder: <br>
 'DIRS': [os.path.join(BASE_DIR, 'templates')],<br>
-
 ii] For static files & folder: <br>
 STATIC_URL = 'static/'<br>
 STATICFILES_DIRS = [<br>
     os.path.join(BASE_DIR, 'static')<br>
 ]<br>
-
 iii] For media files & older:
 MEDIA_URL = 'media/'<br>
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')<br>
-<br>
+<br><br>
 c] Inside the settings.py file make below changes: <br>
 DATABASES = {<br>
     'default': {<br>
@@ -42,8 +40,7 @@ DATABASES = {<br>
         'PASSWORD': '',<br>
         'POST': '3306',<br>
     }<br>
-}<br>
-
+}<br><br>
 8] First check whether the database is connected or not using 2 commands "**python manage.py makemigrations**" and "**python manage.py migrate**".
 <br><br>
 9] In order to run the project execute the command "**python manage.py runserver**" inside the terminal. 
