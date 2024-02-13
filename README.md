@@ -24,21 +24,21 @@ i] For templates files & folder: <br>
 ii] For static files & folder: <br>
 STATIC_URL = 'static/'<br>
 STATICFILES_DIRS = [<br>
-    os.path.join(BASE_DIR, 'static')<br>
+&nbsp;&nbsp;os.path.join(BASE_DIR, 'static')<br>
 ]<br>
 iii] For media files & older:
 MEDIA_URL = 'media/'<br>
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')<br><br>
 c] Inside the settings.py file make below changes: <br>
 DATABASES = {<br>
-&nbsp;'default': {<br>
-&nbsp;&nbsp;'ENGINE': 'django.db.backends.mysql',<br>
-&nbsp;&nbsp;'NAME': 'your-database-name',<br>
-&nbsp;&nbsp;'HOST': 'localhost',<br>
-&nbsp;&nbsp;'USER': 'root',<br>
-&nbsp;&nbsp;'PASSWORD': '',<br>
-&nbsp;&nbsp;'POST': '3306',<br>
-&nbsp;}<br>
+&nbsp;&nbsp;'default': {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;'ENGINE': 'django.db.backends.mysql',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;'NAME': 'your-database-name',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;'HOST': 'localhost',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;'USER': 'root',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;'PASSWORD': '',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;'POST': '3306',<br>
+&nbsp;&nbsp;}<br>
 }<br><br>
 8] First check whether the database is connected or not using 2 commands "**python manage.py makemigrations**" and "**python manage.py migrate**".
 <br><br>
