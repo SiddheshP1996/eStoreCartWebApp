@@ -31,14 +31,14 @@ MEDIA_URL = 'media/'<br>
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')<br><br>
 c] Inside the settings.py file make below changes: <br>
 DATABASES = {<br>
-    'default': {<br>
-        'ENGINE': 'django.db.backends.mysql',<br>
-        'NAME': 'your-database-name',<br>
-        'HOST': 'localhost',<br>
-        'USER': 'root',<br>
-        'PASSWORD': '',<br>
-        'POST': '3306',<br>
-    }<br>
+&nbsp;'default': {<br>
+&nbsp;&nbsp;'ENGINE': 'django.db.backends.mysql',<br>
+&nbsp;&nbsp;'NAME': 'your-database-name',<br>
+&nbsp;&nbsp;'HOST': 'localhost',<br>
+&nbsp;&nbsp;'USER': 'root',<br>
+&nbsp;&nbsp;'PASSWORD': '',<br>
+&nbsp;&nbsp;'POST': '3306',<br>
+&nbsp;}<br>
 }<br><br>
 8] First check whether the database is connected or not using 2 commands "**python manage.py makemigrations**" and "**python manage.py migrate**".
 <br><br>
