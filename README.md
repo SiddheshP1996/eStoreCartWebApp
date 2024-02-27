@@ -59,6 +59,8 @@ DATABASES = {<br>
 <br><br>
 15] Now you will be taken out of the virtual environment to your noraml folder path i.e. **localDriveName:\folderName>**
 <br><br>
+16] Now to exit from the terminal execute the **exit** command then the terminal will be closed i.e. **localDriveName:\folderName>exit**
+<br><br>
 
 **Provide Your Valuable Feedback on the Project.**
 <br><br>
