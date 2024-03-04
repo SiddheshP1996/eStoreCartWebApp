@@ -309,7 +309,7 @@ def send_user_mail(request):
     send_mail(
         "eStoreCart-Order Placed Successfully !!",
         "Order Placed Successfully and Payment Received.",
-        "siddheshpanajkar2001@gmail.com",
+        "yourname@example.com",
         [uemail],
         fail_silently = False,
     )
