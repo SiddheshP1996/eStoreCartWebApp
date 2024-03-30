@@ -30,8 +30,8 @@ ALLOWED_HOSTS = []
 
 # EMAIL SETTINGS
 EMAIL_HOST = "smtp.gmail.com"
-EMAIL_HOST_USER = "siddheshpanajkar2001@gmail.com"
-EMAIL_HOST_PASSWORD = "ibee ydcl joyt xaux"
+EMAIL_HOST_USER = "yourname@example.com"
+EMAIL_HOST_PASSWORD = "YOUR-EMAIL-APP-PASSWORD"
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
