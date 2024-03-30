@@ -1,10 +1,11 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block title %}Login{% endblock title %}
 
 {% block 'main' %}
 <div class="container">
     <div class="row mt-5">
-        <div class="col-md-4 shadow mt-5 p-4 mx-auto bg-warning rounded-4">
+        <div class="col-md-4 shadow mt-5 p-4 mx-auto bg-success-subtle rounded-4">
             <!-- <h2 style="text-align: center;">Registration</h2> -->
             <h2 class="text-center">Login</h2>
             {% if errormsg %}
@@ -15,7 +16,7 @@
             <form action="" method="POST">
                 {% csrf_token %}
                 <div class="mb-3">
-                    <label for="Input1" class="form-label">Username: </label>
+                    <label for="Input1" class="form-label">Useremail: </label>
                     <input type="email" class="form-control" name="uname" id="Input1" placeholder="name@example.com">
                 </div>
                 <div class="mb-3">
@@ -25,6 +26,8 @@
                 <div class="mb-3">
                     <input type="submit" class="btn btn-danger" value="Login">
                     Not a User? <a href="/registration" style="text-decoration: none;">Register</a>
+                    <br><br>
+                    <a class="text-decoration-none" href="/passwordreset">Forget Password? </a>
                 </div>
             </form>
         </div>

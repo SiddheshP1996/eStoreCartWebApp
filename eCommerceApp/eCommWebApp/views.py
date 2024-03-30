@@ -156,6 +156,31 @@ def user_login(request):
     else:
         return render(request, 'login.html', context)
 
+def password_reset(request):
+    context = {}
+    if request.method == 'POST':
+        uname = request.POST['uname']
+        newpassword = request.POST['newpassword']
+        confirmnewpassword = request.POST['confirmnewpassword']
+        if uname == "" or newpassword == "" or confirmnewpassword == "":
+            context['errormsg'] = "Fields cannot be Empty"
+            return render(request, 'password_reset.html', context)
+        elif newpassword != confirmnewpassword:
+            context['errormsg'] = "Enter Same Password for both inputs"
+            return render(request, 'password_reset.html', context)
+        else:
+            try:
+                u = User.objects.get(username = uname)
+                u.set_password(confirmnewpassword)
+                u.save()
+                context['success'] = "Password Updated / Changed Successfully !!"
+                return render(request, 'password_reset.html', context)
+            except Exception:
+                context['errormsg'] = "Enter Same Password for both inputs"
+                return render(request, 'password_reset.html', context)
+    else:
+        return render(request, 'password_reset.html', context)
+
 def user_logout(request):
     logout(request)
     # context = {}

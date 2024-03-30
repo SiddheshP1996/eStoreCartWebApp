@@ -16,6 +16,7 @@ urlpatterns = [
     path('registration/', views.registration),
     path('dummy/', views.dummyRegistration),
     path('login/', views.user_login),
+    path('passwordreset', views.password_reset),
     path('logout/', views.user_logout),
     path('pd/<pid>', views.product_detail),
     path('addtocart/<pid>', views.addtocart),
