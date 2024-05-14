@@ -26,12 +26,12 @@ SECRET_KEY = 'django-insecure-kxs#5w!x!8kl*)&j_8bqud$c03n47-)l2je+=k6g-ck1c#q*i5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app', '.now.sh']
+ALLOWED_HOSTS = ['*']
 
 # EMAIL SETTINGS
 EMAIL_HOST = "smtp.gmail.com"
-EMAIL_HOST_USER = "yourname@example.com"
-EMAIL_HOST_PASSWORD = "YOUR-EMAIL-APP-PASSWORD"
+EMAIL_HOST_USER = "amazingsiddhesh@gmail.com"
+EMAIL_HOST_PASSWORD = "ibee ydcl joyt xaux"
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
@@ -83,13 +83,14 @@ WSGI_APPLICATION = 'eCommerceApp.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-
+"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+"""
 
 """
 DATABASES = {
