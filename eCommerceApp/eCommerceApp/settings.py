@@ -30,8 +30,8 @@ ALLOWED_HOSTS = ['.vercel.app']
 
 # EMAIL SETTINGS
 EMAIL_HOST = "smtp.gmail.com"
-EMAIL_HOST_USER = "yourname@example.com"
-EMAIL_HOST_PASSWORD = "YOUR-EMAIL-APP-PASSWORD"
+EMAIL_HOST_USER = "amazingsiddhesh@gmail.com"
+EMAIL_HOST_PASSWORD = "ibee ydcl joyt xaux"
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
@@ -90,6 +90,7 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
 
 """
 DATABASES = {
