@@ -334,7 +334,7 @@ def send_user_mail(request):
     send_mail(
         "eStoreCart-Order Placed Successfully !!",
         "Order Placed Successfully and Payment Received.",
-        "yourname@example.com",
+        "amazingsiddhesh@gmail.com",
         [uemail],
         fail_silently = False,
     )

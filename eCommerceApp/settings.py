@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-kxs#5w!x!8kl*)&j_8bqud$c03n47-)l2je+=k6g-ck1c#q*i5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app']
+ALLOWED_HOSTS = ['*']
 
 # EMAIL SETTINGS
 EMAIL_HOST = "smtp.gmail.com"
@@ -83,13 +83,14 @@ WSGI_APPLICATION = 'eCommerceApp.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-
+"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+"""
 
 
 """
@@ -139,9 +140,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static')
-]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+# STATIC_ROOT = [os.path.join(BASE_DIR, 'staticfiles_build', 'static')]
 
 # Media Folder URL To Store Uploaded Images and so forth
 
