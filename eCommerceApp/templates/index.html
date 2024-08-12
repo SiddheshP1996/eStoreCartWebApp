@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home{% endblock title %}
+
+{% block 'main' %}
+<!-- ROW 2 STARTS -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 theme-bg" style="border-radius: 0.5rem">
+            <h5>Filter By Category</h5>
+            <hr>
+            <p><a href="/home3" class="anchor navcat">By All</a></p>
+            <p><a href="/catfilter/1" class="anchor navcat">By Mobile</a></p>
+            <p><a href="/catfilter/2" class="anchor navcat">By Shoes</a></p>
+            <p><a href="/catfilter/3" class="anchor navcat">By Cloth</a></p>
+            <h5>Filter By Range</h5>
+            <hr>
+            <form action="/range">
+                <div class="mb-3">
+                    <label for="one" class="form-label">Min: </label>
+                    <input type="number" class="form-control" name="min" id="one" placeholder="Enter Min Value">
+                </div>
+                <div class="mb-3">
+                    <label for="two" class="form-label">Max: </label>
+                    <input type="number" class="form-control" name="max" id="two" placeholder="Enter Max Value">
+                </div>
+                <div class="mb-3">
+                    <input type="submit" class="btn btn-danger" value="Search">
+                </div>
+            </form>
+            <h5>Sort By Price</h5>
+            <hr>
+            <p><a href="/sort/0" class="anchor navcat">Low to High</a></p>
+            <p><a href="/sort/1" class="anchor navcat">High to Low</a></p>
+        </div>
+        <div class="col-md-8">
+            <div class="row">
+                <!-- Dynamic change of data as per the producst dictionary fetched -->
+                {% for x in products %}
+                <div class="col-md-4">
+                    <div class="col-md-4 m-1">
+                        <div class="card" style="width: 18rem;">
+                            <img style="object-fit: contain;" src="{{x.pimage.url}}" class="card-img-top mt-2 shadow"
+                                alt="..." width="70%" height="200px">
+                            <div class="card-body theme-bg">
+                                <h5 class="card-title">{{x.name}}</h5>
+                                <p class="card-text">Price : Rs. {{x.price}} /-</p>
+
+                                <!-- To display categoey names instead of numbers -->
+                                {% if x.category == 1 %}
+                                <p class="card-text">Category : Mobile</p>
+                                {% elif x.category == 2 %}
+                                <p class="card-text">Category : Shoes</p>
+                                {% else %}
+                                <p class="card-text">Category : Cloth</p>
+                                {% endif %}
+                                <a href="/pd/{{x.id}}" class="btn btn-primary">See Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ROW 2 ENDS -->
+
+<script>
+    // Function to set the theme based on user preference stored in local storage
+    function setTheme(theme) {
+        const themeBgElements = document.querySelectorAll('.theme-bg');
+        if (theme === 'dark-mode') {
+            themeBgElements.forEach(el => {
+                el.style.backgroundColor = '#625b5b';  // Dark background color
+                el.style.color = '#ffffff';            // Light text color
+            });
+        } else if (theme === 'light-mode') {
+            themeBgElements.forEach(el => {
+                el.style.backgroundColor = '#f6f6f6';  // Light background color
+                el.style.color = '#000000';            // Dark text color
+            });
+        }
+    }
+
+    // Function to detect and apply the user's theme preference from local storage
+    function detectTheme() {
+        const storedTheme = localStorage.getItem('theme');
+        if (storedTheme) {
+            setTheme(storedTheme);
+        } else {
+            // Default to light theme if no preference is stored
+            setTheme('light-mode');
+        }
+    }
+
+    // Call the function to set the initial theme
+    detectTheme();
+
+    // Example: If you have a button to switch themes, you can add this:
+    document.getElementById('theme-toggle').addEventListener('click', function () {
+        let currentTheme = localStorage.getItem('theme');
+        if (currentTheme === 'dark-mode') {
+            localStorage.setItem('theme', 'light-mode');
+        } else {
+            localStorage.setItem('theme', 'dark-mode');
+        }
+        detectTheme(); // Reapply the theme based on the new selection
+    });
+</script>
+{% endblock 'main' %}

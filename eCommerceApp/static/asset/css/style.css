@@ -1,0 +1,28 @@
+body {
+    background-color:beige;
+}
+
+.anchor {
+    text-decoration: none;
+}
+
+.navcat {
+    color: red;
+}
+
+.address {
+    color: black;
+}
+
+.dark-mode {
+    background-color: #563c3c;
+    color: black;
+}
+
+.dark-mode .address {
+    color: white;
+}
+
+.dark-mode footer .address {
+    color: white;
+}

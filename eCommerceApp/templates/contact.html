@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Contact{% endblock title %}
+
+{% block 'main' %}
+<!-- ROW 2 STARTS -->
+<div class="container my-5 pb-5">
+    <div class="py-3 shadow row mx-auto col-md-5 theme-bg rounded-4">
+        <form action="" method="POST">
+            <div class="mb-3">
+                <label for="input1" class="form-label"><strong> Name : </strong></label>
+                <input type="text" class="form-control" id="input1" placeholder="Your Name" required>
+            </div>
+            <div class="mb-3">
+                <label for="input2" class="form-label"><strong> Email Address : </strong></label>
+                <input type="email" class="form-control" id="input2" placeholder="sample@email.com" required>
+            </div>
+            <div class="mb-3">
+                <label for="input3" class="form-label"><strong> Contact Number : </strong></label>
+                <input type="tel" class="form-control" id="input3">
+            </div>
+            <div class="mb-3">
+                <label for="textarea1" class="form-label"><strong> Message : </strong></label>
+                <textarea class="form-control" id="textarea1" rows="4"></textarea>
+            </div>
+            <div class="mb-3 text-center">
+                <input type="submit" class="btn btn-success" value="Submit">
+            </div>
+        </form>
+    </div>
+</div>
+<!-- ROW 2 ENDS -->
+
+<script>
+    // Function to set the theme based on user preference stored in local storage
+    function setTheme(theme) {
+        const themeBg = document.querySelector('.theme-bg');
+        if (theme === 'dark-mode') {
+            themeBg.style.backgroundColor = '#625b5b';  // Dark background color
+            themeBg.style.color = '#ffffff';            // Light text color
+        } else if (theme === 'light-mode') {
+            themeBg.style.backgroundColor = '#9bd1f370';  // Light background color
+            themeBg.style.color = '#000000';            // Dark text color
+        }
+    }
+
+    // Function to detect and apply the user's theme preference from local storage
+    function detectTheme() {
+        const storedTheme = localStorage.getItem('theme');
+        if (storedTheme) {
+            setTheme(storedTheme);
+        } else {
+            // Default to light theme if no preference is stored
+            setTheme('light-mode');
+        }
+    }
+
+    // Call the function to set the initial theme
+    detectTheme();
+
+    // Example: If you have a button to switch themes, you can add this:
+    document.getElementById('theme-toggle').addEventListener('click', function () {
+        let currentTheme = localStorage.getItem('theme');
+        if (currentTheme === 'dark-mode') {
+            localStorage.setItem('theme', 'light-mode');
+        } else {
+            localStorage.setItem('theme', 'dark-mode');
+        }
+        detectTheme(); // Reapply the theme based on the new selection
+    });
+</script>
+{% endblock 'main' %}

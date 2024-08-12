@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Product Details{% endblock title %}
+
+{% block 'main' %}
+<!-- ROW 2 STARTS -->
+<div class="container">
+    <div class="row mt-5">
+        {% for x in products %}
+        <div class="col-md-6 mt-6">
+            <img style="object-fit: contain;" class="shadow" src="{{x.pimage.url}}" width="70%" height="500px" alt="">
+        </div>
+        <div class="col-md-6 mt-5 address">
+            <p><strong>Product Name: </strong> {{x.name}}</p>
+            <p><strong>Price: </strong> Rs. {{x.price}}</p>
+            {% if x.category == 1 %}
+            <p class="card-text"><strong>Category: </strong> Mobile</p>
+            {% elif x.category == 2 %}
+            <p class="card-text"><strong>Category: </strong> Shoes</p>
+            {% else %}
+            <p class="card-text"><strong>Category: </strong> Cloth</p>
+            {% endif %}
+            <p><strong>Product Description: </strong> {{x.product_details}}</p>
+            <br>
+            <a href="/addtocart/{{x.id}}"> <button class="btn btn-primary">Add To Cart</button></a>
+            <a href="/cart"> <button class="btn btn-primary">View Cart</button></a>
+            <a href="/home2"> <button class="btn btn-primary">Shop More</button></a>
+            {% if success %}
+            <div class="alert alert-success mt-2">
+                {{success}}
+            </div>
+            {% endif %}
+            {% if msg %}
+            <div class="alert alert-danger mt-2">
+                {{msg}}
+            </div>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<!-- ROW 2 ENDS -->
+
+{% endblock 'main' %}
